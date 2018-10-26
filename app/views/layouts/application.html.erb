@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to "psycho", root_path %>
+      <%= link_to "all boards", boards_path %>
+      <%= link_to "new task", new_task_path %>
+      <%= link_to "new project", new_project_path %>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
