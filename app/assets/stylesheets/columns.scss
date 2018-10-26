@@ -1,3 +1,44 @@
 // Place all the styles related to the columns controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.columns {
+  display: flex;
+  width: 100%;
+
+  .column {
+    width: 240px;
+    min-height: 100px;
+    background-color: #EBF6FC;
+
+    &:not(:first-of-type) {
+      margin-left: 25px;
+    }
+
+    .columnHeading {
+      font-size: 14px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+  }
+
+  #done, #inbox {
+    position: absolute;
+    background-color: #F4F4F4;
+  }
+
+  #done {
+    left: -200px;
+    &:hover {
+      left: 0;
+    }
+  }
+
+  #inbox {
+    right: -200px;
+    &:hover {
+      right: 0;
+    }
+  }
+}
