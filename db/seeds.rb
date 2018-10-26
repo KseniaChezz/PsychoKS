@@ -12,7 +12,7 @@ Rake::Task['db:drop'].invoke
 Rake::Task['db:create'].invoke
 Rake::Task['db:migrate'].invoke
 
-Board.create([
+@boards = [
   {
     name: 'General',
     general: true,
@@ -22,9 +22,9 @@ Board.create([
     general: false,
     id: 2
   }
-])
+]
 
-Column.create([
+@columns = [
   {
     name: 'Done',
     position: 0,
@@ -70,7 +70,8 @@ Column.create([
     position: 4,
     board_id: 2
   }
-])
+]
+
 
 def create_board(board)
   Board.create(

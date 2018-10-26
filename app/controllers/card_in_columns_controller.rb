@@ -21,6 +21,14 @@ class CardInColumnsController < ApplicationController
   def edit
   end
 
+  def new_card_in_colunm
+    @card_in_column = CardInColumn.new
+
+    respond_to do |format|
+      format.js { render :newCardInColumn }
+    end
+  end
+
   # POST /card_in_columns
   # POST /card_in_columns.json
   def create

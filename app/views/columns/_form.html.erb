@@ -13,19 +13,18 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, id: :column_name %>
   </div>
 
   <div class="field">
     <%= form.label :position %>
-    <%= form.number_field :position %>
+    <%= form.number_field :position, id: :column_position %>
   </div>
 
   <div class="field">
     <%= form.label :board_id %>
     <!-- <%= form.number_field :board_id %> -->
-    <%= select("column", "board_id", Board.all.collect { |b| [b.name, b.id] }, { include_blank: true })
- %>
+    <%= select("column", "board_id", Board.all.collect { |b| [b.name, b.id] }, { include_blank: true }) %>
   </div>
 
   <div class="actions">

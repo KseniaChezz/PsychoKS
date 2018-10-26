@@ -21,21 +21,30 @@ class BoardInProjectsController < ApplicationController
   def edit
   end
 
-  # POST /board_in_projects
-  # POST /board_in_projects.json
-  def create
-    @board_in_project = BoardInProject.new(board_in_project_params)
+  def new_board_in_project
+  @board_in_project = BoardInProject.new
 
-    respond_to do |format|
-      if @board_in_project.save
-        format.html { redirect_to @board_in_project, notice: 'Board in project was successfully created.' }
-        format.json { render :show, status: :created, location: @board_in_project }
-      else
-        format.html { render :new }
-        format.json { render json: @board_in_project.errors, status: :unprocessable_entity }
-      end
+  respond_to do |format|
+    format.js { render :newBoardInProject }
+  end
+end
+
+# POST /boards
+# POST /boards.json
+def create
+  @board_in_project = BoardInProject.new(board_in_project_params)
+
+  respond_to do |format|
+    if @board_in_project.save
+      format.html { redirect_to @board_in_project, notice: 'Video was successfully created.' }
+      format.json { render :show, status: :created, location: @board_in_project }
+      format.js { render :newBoardInProject }
+    else
+      format.html { render :new }
+      format.json { render json: @board_in_project.errors, status: :unprocessable_entity }
     end
   end
+end
 
   # PATCH/PUT /board_in_projects/1
   # PATCH/PUT /board_in_projects/1.json

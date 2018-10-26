@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_222214) do
+ActiveRecord::Schema.define(version: 2018_10_26_080326) do
 
   create_table "board_in_projects", force: :cascade do |t|
     t.integer "board_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_10_25_222214) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "project_id"
   end
 
   create_table "columns", force: :cascade do |t|

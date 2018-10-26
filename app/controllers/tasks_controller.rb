@@ -5,11 +5,13 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
+    @projects = Project.all
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    @project = Project.find_by_id(@task.project_id)
   end
 
   # GET /tasks/new
