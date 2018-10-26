@@ -71,3 +71,33 @@ Column.create([
     board_id: 2
   }
 ])
+
+def create_board(board)
+  Board.create(
+    name: board[:name],
+    general: board[:general],
+    id: board[:id]
+  )
+end
+
+def create_column(column)
+  Column.create(
+    name: column[:name],
+    position: column[:position],
+    board_id: column[:board_id]
+  )
+end
+
+@boards.each do |board|
+  b = create_board(board)
+  puts "Board #{b.name} created"
+end
+
+@columns.each do |column|
+  c = create_column(column)
+  puts "Column #{c.name} created"
+end
+
+finish = Time.now
+duration = finish - start
+puts "Task completed in #{duration}"

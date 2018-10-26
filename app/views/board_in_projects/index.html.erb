@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Board In Projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Board</th>
+      <th>Project</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @board_in_projects.each do |board_in_project| %>
+      <tr>
+        <td><%= board_in_project.board_id %></td>
+        <td><%= board_in_project.project_id %></td>
+        <td><%= link_to 'Show', board_in_project %></td>
+        <td><%= link_to 'Edit', edit_board_in_project_path(board_in_project) %></td>
+        <td><%= link_to 'Destroy', board_in_project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Board In Project', new_board_in_project_path %>

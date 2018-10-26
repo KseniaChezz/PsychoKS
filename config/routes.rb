@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :card_in_columns
+  resources :board_in_projects
   resources :columns
   resources :boards
   resources :cards

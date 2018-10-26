@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Card In Columns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Card</th>
+      <th>Column</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @card_in_columns.each do |card_in_column| %>
+      <tr>
+        <td><%= card_in_column.card_id %></td>
+        <td><%= card_in_column.column_id %></td>
+        <td><%= link_to 'Show', card_in_column %></td>
+        <td><%= link_to 'Edit', edit_card_in_column_path(card_in_column) %></td>
+        <td><%= link_to 'Destroy', card_in_column, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card In Column', new_card_in_column_path %>
